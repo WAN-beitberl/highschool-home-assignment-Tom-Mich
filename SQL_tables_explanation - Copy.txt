@@ -1,0 +1,23 @@
+1. The main problem with the data was the lack of relation between has_car and car_color - car_color could still exist even if has_car is false, and has_car can be true even if there isn't a car_color.
+2. To fix the problem, I simply set the has_car to match with the existing car_color, i.e to check if there is a car color, meaning the car does exist.
+3. I didn't change the table, only tried to fix the data.
+
+4.
+Constraints:
+Highschool table:
+	1. id is the primary key, so it must exist (not null), unsigned and can be auto incremented.
+	2/3. Many people may have the same first/last name, but all people do have names.
+	4. Not all people have an email address, but if they do it is unique to them (also email has a limit of 320 chars).
+	5. Everyone has a gender, but there are several genders one can identify as.
+	6. An ip_address is only unique to a certain network, but there can be identical ips over several networks.
+	7. Height is just a number, but still everyone has
+	8. Age is relatively a small number, so it can be contained in TINYINT.
+	9. has_car is a boolean, represented by a string of "true"/"false".
+	10. car_color is only a string that exists if the car exists, so it can also be null.
+	11. The range of the grades is very limited, so Tinyint will suffice.
+	12.  grade_avg is only up to 100, tinyint is also enough. All students have grades so it can't be null.
+	13. id_card - everyone must have a unique id given at birth.
+
+Highschool_frienship table:
+	1. id is the primary key, so it must exist and also can be auto incremneted.
+	2. friend_id/other_friend_id can be null when someone isnt very popular, also id is a number so both these variables are integers.
